@@ -1,16 +1,12 @@
-import ShopItemFunc from "./components/ShopItemFunc"
+import ShopItemFunc, {Item} from "./components/ShopItemFunc"
 import ShopItemClass from "./components/ShopItemClass"
 import style from "./App.module.css"
 
 
-const item = {
-  brand: 'Tiger of Sweden',
-  title: 'Leonard coat',
-  description: 'Minimalistic coat in cotton-blend',
-  descriptionFull: 'Men\'s minimalistic overcoat in cotton-blend. Features a stand-up collar, concealed front closure and single back vent. Slim fit with clean, straight shape. Above-knee length.',
-  price: 399,
-  currency: '£'
-}
+const item = new Item('Tiger of Sweden', 'Leonard coat', 'Minimalistic coat in cotton-blend',
+   'Men\'s minimalistic overcoat in cotton-blend. Features a stand-up collar, concealed front closure and single back vent. Slim fit with clean, straight shape. Above-knee length.',
+  399, '£')
+
 
 function App() {
   return (
@@ -24,7 +20,7 @@ function App() {
       <ShopItemFunc item={item} />
     </div>
     <div className={style.window}>
-      <ShopItemClass {...item} />
+      <ShopItemClass item={item} />
     </div>
   </div>  
 )}
